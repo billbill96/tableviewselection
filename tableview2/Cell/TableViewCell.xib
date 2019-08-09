@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableViewCell" customModule="tableview2" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zbJ-3c-oyA" customClass="TableViewCell" customModule="tableview2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zbJ-3c-oyA" id="QHH-SW-7TN">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6j-md-GoL">
+                        <rect key="frame" x="16" y="19" width="84" height="30"/>
+                        <state key="normal" title="BUTTOOOO"/>
+                        <connections>
+                            <action selector="buttonClick:" destination="zbJ-3c-oyA" eventType="touchUpInside" id="fuD-uq-TDK"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEYYY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2G-rr-ZNd">
+                        <rect key="frame" x="179.5" y="24.5" width="55" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="b2G-rr-ZNd" firstAttribute="centerY" secondItem="QHH-SW-7TN" secondAttribute="centerY" id="L4m-A1-bAC"/>
+                    <constraint firstItem="b2G-rr-ZNd" firstAttribute="centerX" secondItem="QHH-SW-7TN" secondAttribute="centerX" id="NVP-EW-30d"/>
+                    <constraint firstItem="I6j-md-GoL" firstAttribute="leading" secondItem="QHH-SW-7TN" secondAttribute="leading" constant="16" id="Xy3-CC-7Oa"/>
+                    <constraint firstItem="I6j-md-GoL" firstAttribute="top" secondItem="QHH-SW-7TN" secondAttribute="top" constant="19" id="Yxr-ev-6mE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="button" destination="I6j-md-GoL" id="3rf-Fw-ar5"/>
+                <outlet property="label" destination="b2G-rr-ZNd" id="NX2-YA-V6N"/>
+            </connections>
+            <point key="canvasLocation" x="-70" y="41"/>
+        </tableViewCell>
+    </objects>
+</document>
