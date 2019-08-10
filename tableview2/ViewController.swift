@@ -34,11 +34,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             cell.setupCell(index: indexPath)
             cell.delegate = self
             
-            if selectIndexPath.contains(indexPath) {
-                cell.button.isSelected = true
-            }else {
-                cell.button.isSelected = false
-            }
+            cell.button.isSelected = selectIndexPath.contains(indexPath)
+            
             return cell
         }
         
@@ -51,11 +48,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             let totalRow = tableView.numberOfRows(inSection: section)
             for row in 0..<totalRow {
                 let index = IndexPath(row: row, section: section)
-                if selectIndexPath.contains(index) {
-                    view.button.isSelected = true
-                }else {
-                     view.button.isSelected = false
-                }
+                    view.button.isSelected = selectIndexPath.contains(index)
+                break
             }
             view.delegate = self
             return view
@@ -75,15 +69,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 extension ViewController: TableViewCellDelegate {
     func didbuttonClicked(_ sender: UIButton, indexPath: IndexPath) {
         print("click cell \(indexPath)")
-        let totalRow = tableView.numberOfRows(inSection: sender.tag)
-//        for row in 0..<totalRow {
-//            if selectIndexPath.contains(indexPath) {
-//                selectIndexPath.remove(at: selectIndexPath.firstIndex(of: indexPath)!)
-//            }else {
-//                selectIndexPath.append(indexPath)
-//            }
-//        }
-        
+       
+        if selectIndexPath.contains(indexPath) {
+            selectIndexPath.remove(at: selectIndexPath.firstIndex(of: indexPath)!)
+        }else {
+            selectIndexPath.append(indexPath)
+        }
+         print("all indexPaht \(selectIndexPath)")
         tableView.reloadSections(IndexSet(integer: sender.tag), with: .none)
     }
 }
