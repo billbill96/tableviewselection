@@ -21,8 +21,21 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    func find(section: Int) -> Bool {
+        let totalRow = tableView.numberOfRows(inSection: section)
+        var count = 0
+        for row in 0..<totalRow {
+            let index = IndexPath(row: row, section: section)
+            if selectIndexPath.contains(index) {
+                count += 1
+            }
+        }
+        return count == totalRow ? true : false
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 5
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,11 +59,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         if let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as? HeaderView {
             view.setupView(section: section)
             let totalRow = tableView.numberOfRows(inSection: section)
-            for row in 0..<totalRow {
-                let index = IndexPath(row: row, section: section)
-                    view.button.isSelected = selectIndexPath.contains(index)
-                break
-            }
+//            for row in 0..<totalRow {
+//                let index = IndexPath(row: row, section: section)
+//                view.button.isSelected = selectIndexPath.contains(index)
+//                print("isselected \(view.button.isSelected)")
+//
+//            }
+            view.button.isSelected = find(section: section)
             view.delegate = self
             return view
         }
