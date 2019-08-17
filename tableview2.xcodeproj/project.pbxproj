@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		339AEB842307C50300F85EFD /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339AEB832307C50300F85EFD /* data.swift */; };
+		339AEB862307DA3900F85EFD /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339AEB852307DA3900F85EFD /* ViewController2.swift */; };
 		33FA9EE122FDC8E100139B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FA9EE022FDC8E100139B4C /* AppDelegate.swift */; };
 		33FA9EE322FDC8E100139B4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FA9EE222FDC8E100139B4C /* ViewController.swift */; };
 		33FA9EE622FDC8E100139B4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33FA9EE422FDC8E100139B4C /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		339AEB832307C50300F85EFD /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
+		339AEB852307DA3900F85EFD /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		33FA9EDD22FDC8E100139B4C /* tableview2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableview2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FA9EE022FDC8E100139B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33FA9EE222FDC8E100139B4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,8 +50,8 @@
 		33FA9ED422FDC8E100139B4C = {
 			isa = PBXGroup;
 			children = (
-				33FA9EDF22FDC8E100139B4C /* tableview2 */,
 				33FA9EDE22FDC8E100139B4C /* Products */,
+				33FA9EDF22FDC8E100139B4C /* tableview2 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +73,8 @@
 				33FA9EE922FDC8E300139B4C /* LaunchScreen.storyboard */,
 				33FA9EE422FDC8E100139B4C /* Main.storyboard */,
 				33FA9EE222FDC8E100139B4C /* ViewController.swift */,
+				339AEB852307DA3900F85EFD /* ViewController2.swift */,
+				339AEB832307C50300F85EFD /* data.swift */,
 			);
 			path = tableview2;
 			sourceTree = "<group>";
@@ -160,7 +166,9 @@
 				33FA9EF422FDC9A700139B4C /* TableViewCell.swift in Sources */,
 				33FA9EE322FDC8E100139B4C /* ViewController.swift in Sources */,
 				33FA9EE122FDC8E100139B4C /* AppDelegate.swift in Sources */,
+				339AEB842307C50300F85EFD /* data.swift in Sources */,
 				33FA9EF822FDCE8700139B4C /* HeaderView.swift in Sources */,
+				339AEB862307DA3900F85EFD /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,11 +24,11 @@ class TableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func setupCell(index: IndexPath){
+    func setupCell(title: String, index: IndexPath){
         button.setTitle("no", for: .normal)
         button.setTitle("click", for: .selected)
         button.tag = index.section
-        label.text = "roowww \(index.row)"
+        label.text = title
         indexPath = index
     }
 

@@ -19,10 +19,10 @@ class HeaderView: UITableViewHeaderFooterView {
 
     var delegate:HeaderViewDelegate?
     
-    func setupView(section: Int){
+    func setupView(header: String,section: Int){
         button.setTitle("not", for: .normal)
         button.setTitle("click", for: .selected)
-        label.text = "section \(section)"
+        label.text = header
         button.tag = section
     }
     
