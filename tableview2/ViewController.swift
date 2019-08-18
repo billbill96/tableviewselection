@@ -68,7 +68,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TableViewCell {
             cell.setupCell(title: selectedGroup[indexPath.section].listGroup[indexPath.row].listGroupName,index: indexPath)
             cell.delegate = self
-            
             cell.button.isSelected = selectedGroup[indexPath.section].listGroup[indexPath.row].isSelected
             
             return cell
