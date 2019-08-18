@@ -52,7 +52,20 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBAction func buttonClicked(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "ViewController2") as! ViewController2
-        newViewController.selectedGroup = selectedGroup.filter( {$0.listGroup.contains(where: {$0.isSelected})})
+        newViewController.selectedGroup = selectedGroup.filter( {$0.listGroup.contains(where: {$0.isSelected == true})})
+        var group2: [SelectedGroup] = []
+        for group in selectedGroup {
+            let group = SelectedGroup(groupName: group.groupName, listGroup: group.listGroup.filter{$0.isSelected})
+            group2.append(group)
+        }
+        print(group2)
+        
+//        var list = selectedGroup.map { (var group: SelectedGroup) -> SelectedGroup in
+//            group.listGroup = group.listGroup.filter { $0.isSelected }
+//            return group
+//        }
+            
+        
         self.present(newViewController, animated: true, completion: nil)
     }
     
