@@ -95,7 +95,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return 80
     }
     
-    func find(section: Int) -> Bool{
+    func find(section: Int) -> Bool {
         let totalRow = tableView.numberOfRows(inSection: section)
         var count = 0
         for row in 0..<totalRow {
@@ -104,17 +104,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 count += 1
             }
         }
-        print("count \(count) rowww\(totalRow)")
-        selectedGroup[section].isSelected = count == totalRow
-        print("headselectee \(selectedGroup[section].isSelected)")
-        tableView.reloadSections(IndexSet(integer: section), with: .none)
         return count == totalRow
     }
 }
 
 extension ViewController: TableViewCellDelegate {
     func didbuttonClicked(_ sender: UIButton, indexPath: IndexPath) {
-        print("click cell \(indexPath)")
        selectedGroup[indexPath.section].listGroup[indexPath.row].isSelected = !selectedGroup[indexPath.section].listGroup[indexPath.row].isSelected
         
         tableView.reloadSections(IndexSet(integer: sender.tag), with: .none)
@@ -123,7 +118,6 @@ extension ViewController: TableViewCellDelegate {
 
 extension ViewController: HeaderViewDelegate {
     func buttonClickedInHeader(sender: UIButton) {
-        print("click header \(sender.tag)")
         let totalRow = tableView.numberOfRows(inSection: sender.tag)
             for row in 0..<totalRow {
                 let index = IndexPath(row: row, section: sender.tag)
@@ -131,10 +125,8 @@ extension ViewController: HeaderViewDelegate {
                     selectedGroup[index.section].listGroup[index.row].isSelected = !selectedGroup[index.section].listGroup[index.row].isSelected
                 }else {
                     selectedGroup[index.section].listGroup[index.row].isSelected = true
-
                 }
             }
-
         tableView.reloadSections(IndexSet(integer: sender.tag) ,with: .none)
     }
 }
