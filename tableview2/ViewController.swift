@@ -43,7 +43,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 let list = SelectedListGroup(listGroupName: list.listGroupName, isSelected: false)
                 listGroup.append(list)
             }
-            let group = SelectedGroup(groupName: arr.groupName, listGroup: listGroup,isSelected: false)
+            let group = SelectedGroup(groupName: arr.groupName, listGroup: listGroup)
             selectedGroup.append(group)
         }
     }
@@ -120,12 +120,8 @@ extension ViewController: HeaderViewDelegate {
         let totalRow = tableView.numberOfRows(inSection: sender.tag)
             for row in 0..<totalRow {
                 let index = IndexPath(row: row, section: sender.tag)
-                if selectedGroup[index.section].isSelected {
                     selectedGroup[index.section].listGroup[index.row].isSelected = !selectedGroup[index.section].listGroup[index.row].isSelected
-                }else {
-                    selectedGroup[index.section].listGroup[index.row].isSelected = true
-                }
-            }
+        }
         tableView.reloadSections(IndexSet(integer: sender.tag) ,with: .none)
     }
 }

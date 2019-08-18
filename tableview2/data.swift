@@ -12,12 +12,10 @@ public struct ListGroup {
 struct SelectedGroup {
     let groupName: String
     var listGroup: [SelectedListGroup]
-    var isSelected: Bool
     
-    init(groupName: String, listGroup: [SelectedListGroup], isSelected: Bool){
+    init(groupName: String, listGroup: [SelectedListGroup]){
         self.groupName = groupName
         self.listGroup = listGroup
-        self.isSelected = isSelected
     }
 }
 
